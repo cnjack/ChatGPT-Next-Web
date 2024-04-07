@@ -297,6 +297,18 @@ const tw = {
           SubTitle: "除默認地址外，必須包含 http(s)://",
         },
       },
+      Ollama: {
+        ApiKey: {
+          Title: "API Key",
+          SubTitle: "使用自定義 Ollama Key 繞過密碼訪問限制",
+          Placeholder: "Ollama API Key",
+        },
+
+        Endpoint: {
+          Title: "接口(Endpoint) 地址",
+          SubTitle: "除默認地址外，必須包含 http(s)://",
+        },
+      },
       Azure: {
         ApiKey: {
           Title: "接口密鑰",
@@ -467,8 +479,8 @@ const tw = {
 
 type DeepPartial<T> = T extends object
   ? {
-    [P in keyof T]?: DeepPartial<T[P]>;
-  }
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
   : T;
 
 export type LocaleType = typeof tw;

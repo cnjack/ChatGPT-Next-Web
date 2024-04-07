@@ -10,6 +10,7 @@ export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
 export const DEFAULT_API_HOST = "https://api.nextchat.dev";
 export const OPENAI_BASE_URL = "https://api.openai.com";
+export const OLLAMA_BASE_URL = "http://localhost:11434";
 
 export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
@@ -65,6 +66,7 @@ export const EXPORT_MESSAGE_CLASS_NAME = "export-markdown";
 
 export enum ServiceProvider {
   OpenAI = "OpenAI",
+  Ollama = "Ollama",
   Azure = "Azure",
   Google = "Google",
 }

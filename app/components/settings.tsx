@@ -54,6 +54,7 @@ import {
   Azure,
   Google,
   OPENAI_BASE_URL,
+  OLLAMA_BASE_URL,
   Path,
   RELEASE_URL,
   STORAGE_KEY,
@@ -997,6 +998,45 @@ export function Settings() {
                             accessStore.update(
                               (access) =>
                                 (access.openaiApiKey = e.currentTarget.value),
+                            );
+                          }}
+                        />
+                      </ListItem>
+                    </>
+                  ) : accessStore.provider === "Ollama" ? (
+                    <>
+                      <ListItem
+                        title={Locale.Settings.Access.Ollama.Endpoint.Title}
+                        subTitle={
+                          Locale.Settings.Access.Ollama.Endpoint.SubTitle
+                        }
+                      >
+                        <input
+                          type="text"
+                          value={accessStore.ollamaUrl}
+                          placeholder={OLLAMA_BASE_URL}
+                          onChange={(e) =>
+                            accessStore.update(
+                              (access) =>
+                                (access.ollamaUrl = e.currentTarget.value),
+                            )
+                          }
+                        ></input>
+                      </ListItem>
+                      <ListItem
+                        title={Locale.Settings.Access.Ollama.ApiKey.Title}
+                        subTitle={Locale.Settings.Access.Ollama.ApiKey.SubTitle}
+                      >
+                        <PasswordInput
+                          value={accessStore.ollamaApiKey}
+                          type="text"
+                          placeholder={
+                            Locale.Settings.Access.Ollama.ApiKey.Placeholder
+                          }
+                          onChange={(e) => {
+                            accessStore.update(
+                              (access) =>
+                                (access.ollamaApiKey = e.currentTarget.value),
                             );
                           }}
                         />

@@ -296,6 +296,18 @@ const cn = {
           SubTitle: "除默认地址外，必须包含 http(s)://",
         },
       },
+      Ollama: {
+        ApiKey: {
+          Title: "API Key",
+          SubTitle: "使用自定义 Ollama Key 绕过密码访问限制",
+          Placeholder: "Ollama API Key",
+        },
+
+        Endpoint: {
+          Title: "接口地址",
+          SubTitle: "除默认地址外，必须包含 http(s)://",
+        },
+      },
       Azure: {
         ApiKey: {
           Title: "接口密钥",

@@ -1,6 +1,7 @@
 import {
   ApiPath,
   DEFAULT_API_HOST,
+  OLLAMA_BASE_URL,
   ServiceProvider,
   StoreKey,
 } from "../constant";
@@ -36,6 +37,10 @@ const DEFAULT_ACCESS_STATE = {
   googleApiKey: "",
   googleApiVersion: "v1",
 
+  // ollama
+  ollamaUrl: OLLAMA_BASE_URL,
+  ollamaApiKey: "",
+
   // server config
   needCode: true,
   hideUserApiKey: false,
@@ -59,6 +64,10 @@ export const useAccessStore = createPersistStore(
       return ensure(get(), ["openaiApiKey"]);
     },
 
+    isValidOllama() {
+      return ensure(get(), ["ollamaUrl", "ollamaApiKey"]);
+    },
+
     isValidAzure() {
       return ensure(get(), ["azureUrl", "azureApiKey", "azureApiVersion"]);
     },
@@ -73,6 +82,7 @@ export const useAccessStore = createPersistStore(
       // has token or has code or disabled access control
       return (
         this.isValidOpenAI() ||
+        this.isValidOllama() ||
         this.isValidAzure() ||
         this.isValidGoogle() ||
         !this.enabledAccessControl() ||

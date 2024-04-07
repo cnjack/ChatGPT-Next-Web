@@ -299,6 +299,18 @@ const en: LocaleType = {
           SubTitle: "Must starts with http(s):// or use /api/openai as default",
         },
       },
+      Ollama: {
+        ApiKey: {
+          Title: "Ollama API Key",
+          SubTitle: "User custom Ollama Api Key",
+          Placeholder: "sk-xxx",
+        },
+
+        Endpoint: {
+          Title: "Ollama Endpoint",
+          SubTitle: "Must starts with http(s)://",
+        },
+      },
       Azure: {
         ApiKey: {
           Title: "Azure Api Key",
